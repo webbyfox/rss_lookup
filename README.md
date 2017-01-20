@@ -1,7 +1,7 @@
 RSSLookup
 =========
 
-`RSSLookup` is a small lightweight app, fast open source flask RSS lookup app. It's default list the BBC feed.
+`RSSLookup` is a small lightweight app, fast, open source flask RSS lookup app. It's default list the BBC feed.
 
 Installation
 ------------
@@ -18,7 +18,9 @@ Installation
  API Call
  --------
 
- http://0.0.0.0:5000
- http://0.0.0.0:5000/api/rss/
- http://0.0.0.0:5000/api/rss/<rss_url>
+|API Call|Descriptoin|
+|--------|-----------:|
+|http://0.0.0.0:5000|Default API Root|
+|http://0.0.0.0:5000/api/rss/|RSS API default BBC feed as output|
+|http://0.0.0.0:5000/api/rss/<rss_url>|Parameterised RSS call with URL|
 
