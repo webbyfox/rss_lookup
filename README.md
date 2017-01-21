@@ -45,6 +45,22 @@ pip install flask-triangle
 |http://0.0.0.0:5000/api/rss/|RSS API default BBC feed as output|
 |http://0.0.0.0:5000/api/rss/<rss_url>|Parameterised RSS call with URL|
 
+Deployment
+----------
+
+Deploy app via Heroku build for CI. App can be push to live enviroment via following command
+
+```git
+git push heroku master
+```
+
+Main RSS app at:
+https://limitless-falls-83579.herokuapp.com/display 
+
+API call via following call
+
+https://limitless-falls-83579.herokuapp.com/api/rss - default BBC News feed 
+https://limitless-falls-83579.herokuapp.com/api/rss/<URL>
 
 
 TODO
@@ -52,7 +68,7 @@ TODO
 
 * ~~Create web api for feed~~
 * Write test for API
-* Template for front end user
-* Search feed items (ng) 
+* ~~Template for front end user~~
+* ~~Search feed items (ng)~~
 * favorite functionality (ng)
  
