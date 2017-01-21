@@ -48,3 +48,14 @@
 	transform: scale(1.1);
 
 }
+.container-fluid{
+    background-color: #5f5f5f;
+    color:white;
+}
+select{
+    color:#5f5f5f;
+}
+option:not(:checked) {
+    background-color: white; 
+    color:#000;
+}

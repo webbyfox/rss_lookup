@@ -6,7 +6,7 @@ from flask import  jsonify
 import urllib2
 from urllib2 import URLError
 import xmltodict
-from flask.ext.triangle import Triangle
+from flask_triangle import Triangle
 
 app = Flask(__name__)
 Triangle(app)
