@@ -1,0 +1,68 @@
+<!doctype html>
+<html ng-app="MyApp">
+	<head>
+		<title>RSS App</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="static/js/app.js" > </script>
+		<link rel="stylesheet" href="static/css/style.css">
+	</head>
+	<body ng-controller="MyController">
+
+<div class="container">
+	<div class="row">
+        <div class="col-md-6 col-sm-offset-1">
+    		<h2>BBC News</h2>
+            <div id="custom-search-input">
+                <div class="input-group col-md-12">
+                    <input type="text" ng-model="query" class="form-control input-lg" placeholder="Search for articles" />
+                    <span class="input-group-btn">
+                        <button class="btn btn-info btn-lg" type="button">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+     
+                </div>
+            </div>
+
+            Order By:<select ng-model="orderPub" class="selectpicker">
+	                    <option value="pubDate">Publication Date</option>
+	                    <option value="title">Title</option>
+                    </select>
+
+                    <label class="formgroup">
+                    	<input type="radio" name="direction" ng-model="direction"  value="reverse">ascending
+                    </label>
+                       <label class="formgroup">
+                    	<input type="radio" name="direction" ng-model="direction" checked>descending
+                    </label>
+        </div>
+	</div>
+    <br/><br/>
+
+    <div class="row">
+     <div class="col-md-6 col-sm-offset-1">
+
+             <div ng-repeat="article in articles |filter:query | orderBy: orderPub:direction ">
+
+                  <div class="panel  panel-default">
+                      <div class="panel-heading">
+                          <h5 class="panel-success"><a href="{{article.link|angular}}">{{article.title|angular}}</a> &nbsp;
+                              <a href="#"><span class="glyphicon glyphicon-star pull-right" /></a></h5>
+                      </div>
+                      <div class="panel-body">
+                         {{article.description|angular}} <br/>
+                      </div>
+                      <div class="panel-footer">{{article.pubDate|angular}}
+                      </div>
+
+                  </div>
+                 <br/>
+             </div>
+
+
+        </div>
+    </div>
+</div>
+	</body>
+</html>
