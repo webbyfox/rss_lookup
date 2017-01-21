@@ -6,9 +6,10 @@ from flask import  jsonify
 import urllib2
 from urllib2 import URLError
 import xmltodict
+from flask.ext.triangle import Triangle
 
 app = Flask(__name__)
-
+Triangle(app)
 
 @app.route('/')
 def index():
@@ -17,13 +18,17 @@ def index():
                     "/api/rss/<url>": "URL to fetch API gateway"})
 
 
+
+@app.route('/display')
+def display():
+    return render_template('display.html')
+
 def rss_to_dict(rss_url):
     rss_data = None
     try:
         rss_data = urllib2.urlopen(rss_url)
     except URLError,ValueError:
         abort(404)
-
     if rss_data:
         data = rss_data.read()
         rss_data.close()
@@ -40,10 +45,10 @@ def get_tasks(rss_url='https://feeds.bbci.co.uk/news/rss.xml?edition=uk'):
 @app.errorhandler(404)
 def page_not_found(e):
     response = jsonify({
-      "ErrorMessage": "Please provide valid RSS link"
+      "ErrorMessage" : "Please provide valid RSS link"
     })
     return response
-    #return render_template('404.html', content=content), 404
+
 
 
 if __name__ == "__main__":
