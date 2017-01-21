@@ -1,8 +1,8 @@
-
-Flask==0.12
+iFlask==0.12
 Flask-Triangle==0.5.4
 functools32==3.2.3.post2
-gunicorn==19.6.0httplib2==0.8
+gunicorn==19.6.0
+httplib2==0.8
 itsdangerous==0.24
 Jinja2==2.9.4
 jsonpatch==1.3
