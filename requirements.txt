@@ -24,3 +24,4 @@ wadllib==1.3.2
 Werkzeug==0.11.15
 xmltodict==0.10.2
 zope.interface==4.0.5
+Flask-SQLAlchemy
