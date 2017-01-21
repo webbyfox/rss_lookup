@@ -1,4 +1,4 @@
-iFlask==0.12
+Flask==0.12
 Flask-Triangle==0.5.4
 functools32==3.2.3.post2
 gunicorn==19.6.0
