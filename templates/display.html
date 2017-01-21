@@ -25,25 +25,27 @@
                 </div>
             </div>
 
-            Order By:<select ng-model="orderPub" class="selectpicker">
+            Order By:<select ng-model="orderSelect" class="selectpicker">
 	                    <option value="pubDate">Publication Date</option>
 	                    <option value="title">Title</option>
                     </select>
 
                     <label class="formgroup">
-                    	<input type="radio" name="direction" ng-model="direction"  value="reverse">ascending
+                    	<input type="radio" name="direction" ng-model="direction" >ascending
                     </label>
                        <label class="formgroup">
-                    	<input type="radio" name="direction" ng-model="direction" checked>descending
+                    	<input type="radio" name="direction" ng-model="direction" value="reverse" checked>descending
                     </label>
         </div>
 	</div>
-    <br/><br/>
+
+    <br/>
+    <br/>
 
     <div class="row">
      <div class="col-md-6 col-sm-offset-1">
 
-             <div ng-repeat="article in articles |filter:query | orderBy: orderPub:direction ">
+             <div ng-repeat=" article in articles | filter:query | orderBy:orderSelect:direction ">
 
                   <div class="panel  panel-default">
                       <div class="panel-heading">
@@ -51,6 +53,7 @@
                               <a href="#"><span class="glyphicon glyphicon-star pull-right" /></a></h5>
                       </div>
                       <div class="panel-body">
+                         <img class="img img-responsive img-thumbnail" src="{{article.image|angular}}" />
                          {{article.description|angular}} <br/>
                       </div>
                       <div class="panel-footer">{{article.pubDate|angular}}
