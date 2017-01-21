@@ -3,10 +3,16 @@ RSSLookup
 
 `RSSLookup` is a small lightweight app, fast, python app based on flask framework. It's default list the BBC feed. User can search RSS item and add to favorite per session
 
-Dependancies
+Installation
 ------------
 
-+ Install pip via downloading [get-pip.py](https://bootstrap.pypa.io/get-pip.py) and move file to your project folder and run
++ Clone this repository via running
+
+```git
+git clone https://github.com/webbyfox/rss_lookup.git
+```
+
++ Install pip if it's not install already. get-pip.py is provided via this repository. Just run 
 
 
 ```python
@@ -22,6 +28,12 @@ Dependancies
 
 ```python
  pip install xmltodict
+```
+
++Install flask-triangle for an
+
+```python
+pip install flask-triangle
 ```
 
  API Call
