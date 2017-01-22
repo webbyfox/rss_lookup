@@ -1,26 +1,18 @@
 RSSLookup
 =========
 
-`RSSLookup` is a small lightweight app, fast, python app based on flask framework. It's default list the BBC feed. User can search RSS item and add to favorite per session
+`RSSLookup` is a small lightweight, fast, python app for searching and booking RSS feed. It's default BBC feed. User can search RSS item and add to favorite per session.
 
 Installation
 ------------
 
-+ Clone this repository via running
-
-```git
-git clone https://github.com/webbyfox/rss_lookup.git
-```
-
-+ Install pip if it's not install already. get-pip.py is provided via this repository. Just run
-
++ Install following dependancies via pip  before clonning app
 
 ```python
- python get-pip.py
  pip install flask
  pip install xmltodict
  pip install flask-triangle
- pip install s
+ pip install Flask-SQLAlchemy
 ```
 
  API Call
@@ -44,11 +36,11 @@ git push heroku master
 
 
 API call via following call
-|URL |Type|Descriptoin|
+|URL |Type|Description|
 |--------|---|-----------|
-|**https://limitless-falls-83579.herokuapp.com/display** |APPLICATION | API call with feed url argument|
-|https://limitless-falls-83579.herokuapp.com/api/rss|API | Default BBC News feed |
-|https://limitless-falls-83579.herokuapp.com/api/rss/<URL> |API | API call with feed url argument|
+|**https://limitless-falls-83579.herokuapp.com/display** |WEB APP | API call with feed url argument|
+|https://limitless-falls-83579.herokuapp.com/api/rss|WEB API | Default BBC News feed |
+|https://limitless-falls-83579.herokuapp.com/api/rss/<URL> |WEB API | API call with feed url argument|
 
 
 
