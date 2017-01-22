@@ -59,3 +59,6 @@ option:not(:checked) {
     background-color: white; 
     color:#000;
 }
+.glyphicon .glyphicon-star{
+    cursor: pointer;
+}

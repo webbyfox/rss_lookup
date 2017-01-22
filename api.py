@@ -48,7 +48,7 @@ def get_tasks(rss_url='https://feeds.bbci.co.uk/news/rss.xml?edition=uk'):
     return jsonify({'Response': rss_to_dict(rss_url)})
 
 
-@app.route('/api/rss/add/', methods = ['GET'])
+@app.route('/api/fav/add/', methods=['GET'])
 def not_allowed():
     response = jsonify({
         "ErrorMessage": "GET method is not allowed"
@@ -56,11 +56,11 @@ def not_allowed():
     return response
 
 
-@app.route('/api/rss/add/', methods = ['POST'])
+@app.route('/api/fav/add/', methods=['POST'])
 def add_url():
     if 'url' not in request.form:
          abort(400)
-    item = Favourites(request.form['ip_address'], request.form['url'])
+    item = Favourites(request.remote_addr, request.form['url'])
     db.session.add(item)
     db.session.commit()
     return 'Created'
