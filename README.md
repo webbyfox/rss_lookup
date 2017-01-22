@@ -12,28 +12,15 @@ Installation
 git clone https://github.com/webbyfox/rss_lookup.git
 ```
 
-+ Install pip if it's not install already. get-pip.py is provided via this repository. Just run 
++ Install pip if it's not install already. get-pip.py is provided via this repository. Just run
 
 
 ```python
  python get-pip.py
- ```
-+ Install flask via pip command
-
-```python
  pip install flask
-```
-
-+ Install xmltodict module to convert xml data to dictionaries
-
-```python
  pip install xmltodict
-```
-
-+Install flask-triangle for an
-
-```python
-pip install flask-triangle
+ pip install flask-triangle
+ pip install s
 ```
 
  API Call
@@ -48,19 +35,22 @@ pip install flask-triangle
 Deployment
 ----------
 
-Deploy app via Heroku build for CI. App can be push to live enviroment via following command
+Deploy app at Herokuapp. App can be push to live enviroment via following command
 
 ```git
 git push heroku master
 ```
 
-Main RSS app at:
-https://limitless-falls-83579.herokuapp.com/display 
+
 
 API call via following call
+|URL |Type|Descriptoin|
+|--------|---|-----------|
+|**https://limitless-falls-83579.herokuapp.com/display** |APPLICATION | API call with feed url argument|
+|https://limitless-falls-83579.herokuapp.com/api/rss|API | Default BBC News feed |
+|https://limitless-falls-83579.herokuapp.com/api/rss/<URL> |API | API call with feed url argument|
 
-https://limitless-falls-83579.herokuapp.com/api/rss - default BBC News feed 
-https://limitless-falls-83579.herokuapp.com/api/rss/<URL>
+
 
 
 TODO
@@ -70,5 +60,4 @@ TODO
 * Write test for API
 * ~~Template for front end user~~
 * ~~Search feed items (ng)~~
-* favorite functionality (ng)
- 
+* ~~favorite functionality (ng) ~~(partially)
