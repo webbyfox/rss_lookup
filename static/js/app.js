@@ -24,7 +24,7 @@ myApp.controller("MyController",function($scope, $http)
 //
 //          myEle.myClass = "glyphicon glyphicon-heart pull-right";
 //         console.log(obj.link);
-//         var config = {
+         var config = {
                 headers : {
                     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
                     }
