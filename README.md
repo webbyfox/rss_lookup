@@ -15,15 +15,6 @@ Installation
  pip install Flask-SQLAlchemy
 ```
 
- API Call
- --------
-
-|API Call|Descriptoin|
-|--------|-----------|
-|http://0.0.0.0:5000|Default API Root|
-|http://0.0.0.0:5000/api/rss/|RSS API default BBC feed as output|
-|http://0.0.0.0:5000/api/rss/<rss_url>|Parameterised RSS call with URL|
-
 Deployment
 ----------
 
@@ -33,9 +24,8 @@ Deploy app at Herokuapp. App can be push to live enviroment via following comman
 git push heroku master
 ```
 
-
-
 API call via following call
+
 | URL     |  Type  |Descriptoin|
 |---------|--------|-----------|
 |**https://limitless-falls-83579.herokuapp.com/display** |WEB APP | API call with feed url argument|
