@@ -30,7 +30,7 @@ API call via following call
 |---------|--------|-----------|
 |**https://limitless-falls-83579.herokuapp.com/display** |WEB APP | API call with feed url argument|
 |https://limitless-falls-83579.herokuapp.com/api/rss|WEB API | Default BBC News feed |
-|https://limitless-falls-83579.herokuapp.com/api/rss/<URL> |WEB API | API call with feed url argument|
+|https://limitless-falls-83579.herokuapp.com/api/rss/**RSSFEEDURL** |WEB API | API call with feed url argument|
 
 
 TODO
