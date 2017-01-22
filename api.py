@@ -66,6 +66,11 @@ def add_url():
     return 'Created'
 
 
+@app.route('/api/fav/', methods=['GET'])
+def get_all_fav():
+    fav_list = Favourites.query.filter_by(ip_address=request.remote_addr).all()
+    return jsonify({'response':  str([item.url for item in fav_list])})
+
 @app.errorhandler(404)
 def page_not_found(e):
     response = jsonify({
