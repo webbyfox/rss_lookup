@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app="FavApp">
+	<head>
+		<title>Search a RSS Feed </title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="/static/js/app.js" > </script>
+		<link rel="stylesheet" href="/static/css/style.css">
+	</head>
+	<body ng-controller="FavController">
+
+<div class="container-fluid">
+<div class="container">
+    <div class="row">
+         <div class="col-md-9">
+            <h3>List of favourite</h3>
+            <span class="pull-right"><a href="/display/" class="btn btn-success">Back to search</a></a></span>
+         </div>
+    </div>
+
+</div>
+</div>
+    <br/>
+    <br/>
+<div class="container">
+    <div class="row">
+     <div class="col-md-9">
+       <ul>
+           <li ng-repeat="item in fav_articles track by $index">
+              <a href="{{item|angular}}">{{item|angular}}</a>
+           </li>
+       </ul>
+
+
+        </div>
+    </div>
+</div>
+	</body>
+</html>

@@ -25,9 +25,15 @@ def index():
                     "/api/rss/<url>": "URL to fetch API gateway"})
 
 
-@app.route('/display')
+@app.route('/display/')
 def display():
     return render_template('display.html')
+
+
+@app.route('/fav/')
+def get_favourites():
+    return render_template('favourites.html')
+
 
 def rss_to_dict(rss_url):
     rss_data = None
@@ -48,14 +54,6 @@ def get_tasks(rss_url='https://feeds.bbci.co.uk/news/rss.xml?edition=uk'):
     return jsonify({'Response': rss_to_dict(rss_url)})
 
 
-@app.route('/api/fav/add/', methods=['GET'])
-def not_allowed():
-    response = jsonify({
-        "ErrorMessage": "GET method is not allowed"
-    })
-    return response
-
-
 @app.route('/api/fav/add/', methods=['POST'])
 def add_url():
     if 'url' not in request.form:
@@ -69,12 +67,13 @@ def add_url():
 @app.route('/api/fav/', methods=['GET'])
 def get_all_fav():
     fav_list = Favourites.query.filter_by(ip_address=request.remote_addr).all()
-    return jsonify({'response':  str([item.url for item in fav_list])})
+    return jsonify({'response':  list(set([item.url for item in fav_list]))})
+
 
 @app.errorhandler(404)
 def page_not_found(e):
     response = jsonify({
-      "ErrorMessage" : "Please provide valid RSS link"
+      "ErrorMessage": "Please provide valid RSS link"
        })
     return response
 
