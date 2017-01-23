@@ -15,6 +15,16 @@ Installation
  pip install Flask-SQLAlchemy
 ```
 
+Local Server
+------------
+
+flask application can be started via running
+
+```python
+python api.py
+```
+
+
 Deployment
 ----------
 
